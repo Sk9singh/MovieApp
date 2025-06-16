@@ -25,7 +25,7 @@ const useFetch = <T>(fetchFunction: () => Promise<T>, autoFetch=true) => {   // 
        setLoading(false);
     }
 
-    useEffect(() => {                                        //useEffect will run automatically when the component mounts
+    useEffect(() => {                                        //useEffect will run automatically when the component mounts OR when the dependencies change
         if (autoFetch) {
             fetchData();
         }
