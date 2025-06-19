@@ -168,7 +168,7 @@ import { fetchMovieDetails } from '@/services/api'
 import { icons } from '@/constants/icons'
 import { addToWishList, getWishList, removeFromWishList } from '@/services/wishlistApi'
 import { useAuth } from '@/hooks/useAuth'
-import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 interface movieInfoProps {
     label: string;

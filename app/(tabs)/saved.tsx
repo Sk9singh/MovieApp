@@ -16,7 +16,7 @@ const Saved = () => {
   
   const { getUserId } = useAuth()
   const userId = getUserId()
-
+  
   // FIXED: Refresh data whenever screen comes into focus
   useFocusEffect(
     React.useCallback(() => {
@@ -63,6 +63,8 @@ const Saved = () => {
 
   return (
     <View className='flex-1 bg-dark-100'>
+      <Text className='text-white text-2xl font-bold p-4'>Saved Movies</Text>
+      <Text className='text-light-200 text-sm px-4 mb-4'>You have {movies.length} movies in your wishlist.</Text>
       <FlatList
         data={movies}
         renderItem={renderMovie}
