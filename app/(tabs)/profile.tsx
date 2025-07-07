@@ -37,13 +37,8 @@ const Profile = () => {
           style: 'destructive',
           onPress: async () => {
             try {
-              // Remove stored tokens
-              await AsyncStorage.removeItem('userToken');
-              await AsyncStorage.removeItem('userData');
-              
+              await AsyncStorage.clear();
               console.log('User logged out successfully');
-              
-              // Navigate back to login screen
               router.replace('/login');
             } catch (error) {
               console.error('Error during logout:', error);
@@ -66,8 +61,13 @@ const Profile = () => {
           <Text className="text-lg font-semibold text-light-300 mt-3 ml-4">Email : { userEmail }</Text>
         </View>
       </View>
-      <View className="justify-center mt-8 left-4"> 
-        <Text className="text-2xl font-bold text-light-200 mb-4">Further Details .....</Text>
+      <View className="justify-center items-center mt-8"> 
+        <TouchableOpacity className='flex-row bg-accent rounded-xl items-center justify-center shadow-lg w-96 h-16 right-4 left-0' onPress={() => router.push('/chat')}>
+        <Image source={icons.heart} tintColor={"#B19CD9"} className="size-16"/>
+         <Text className="text-2xl font-bold text-light-200 right-2 size-fit">Chat</Text>
+        </TouchableOpacity>
+       
+
       
       </View>
       <View className='absolute right-4 top-6 z-10'>

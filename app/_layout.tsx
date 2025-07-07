@@ -20,7 +20,7 @@ export default function RootLayout() {
         router.replace("/login");
       } else {
         
-        console.log('User token found, redirecting to main app');
+        console.log('User token found, redirecting to main app--');
         router.replace('/(tabs)');
       }
     } catch (error) {
@@ -47,6 +47,14 @@ export default function RootLayout() {
         />
         <Stack.Screen
           name="movies/[id]"
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="chat"
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="chats/[id]"
           options={{ headerShown: false }}
         />
       </Stack>   
